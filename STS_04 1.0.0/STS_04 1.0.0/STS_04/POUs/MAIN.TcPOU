@@ -6,7 +6,7 @@ VAR
 	fb_Test_Conversion : Fb_AnalogToReal_Conversion;
 	ntest: LREAL;
 	fb_testR2A: Fb_RealToAnalog_Conversion;
-	stTestString : STRING :='Added this for 1.0.1';
+	stTestString : STRING :='Added this for 1.0.1, changes should be seen here between 2 commits';
 END_VAR
 ]]></Declaration>
     <Implementation>
