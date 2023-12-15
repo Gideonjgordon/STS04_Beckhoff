@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="dutVisuEjection" Id="{a65f11ed-bb1a-4b72-98b8-d85cd3f78e1a}">
+    <Declaration><![CDATA[TYPE dutVisuEjection :
+STRUCT
+	(*Values linked to HMI*)
+	(*Rejection Operation*)
+	tDetectJamDuration_s	: INT;
+	nBrakeDistance_mm		: INT;
+	tBrakePulse_ms			: INT;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

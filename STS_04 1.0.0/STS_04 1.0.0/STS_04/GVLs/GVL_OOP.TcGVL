@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_OOP" Id="{34e8a83d-327f-4f6c-8db0-ca7073ec30ef}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	//General Buttons
+	(*Governs all things*)
+	bStart 	: PB_NOpen; 
+	bStop	: PB_NOpen;
+	//bStart2 : PB_NClose;
+	bEmergencyStop	:PB_NClose;
+	
+	(*sts component*)
+	(*
+		sts-feeder
+		sts-sat
+		sts-vbt
+		sts-EjectGate
+		sts-Stacker		
+	*)
+	(*sts-feeder*)
+	bBottomHit 		: Sensor_NOpen;
+	bTopHit			: Sensor_NOpen;
+	bEnableFeeder	: Sensor_Trigger;	
+	bUpFeeder		: Sensor_Trigger;
+	bResetFeeder	: Sensor_Trigger;
+	bDownFeeder     : Sensor_Trigger;
+	nFeederTravel   : INT;
+	
+	(*Modules*)
+	stHMI			: HMI;
+	
+	
+	
+	fbFeeder		: Feeder(bBottomHit,bTopHit);
+
+	
+	fbSTS : STS(bStart,
+				bStop,
+				bEmergencyStop,
+				fbFeeder,
+				stHMI);
+	
+(*OOP Logic*)	
+(*
+{Sensor Module}
+		|
+Integrated Into--->{Machine Module}
+						|
+					Integrated Into ---->{Main Machine}
+
+
+*)
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

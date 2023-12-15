@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "UserControl1": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\UserControl1.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl1"
+    },
+    "Title_Input": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\Title_Input.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Title_Input"
+    },
+    "Title_Input2": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\Title_Input2.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Title_Input2"
+    },
+    "TitleInput": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\TitleInput.usercontrol.json",
+      "id": "tchmi:project#/definitions/TitleInput",
+      "type": "object"
+    },
+    "TitleInputVertical": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\TitleInputVertical.usercontrol.json",
+      "id": "tchmi:project#/definitions/TitleInputVertical",
+      "type": "object"
+    },
+    "Std_Button": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\Std_Button.usercontrol.json",
+      "id": "tchmi:project#/definitions/Std_Button",
+      "type": "object"
+    },
+    "Pill_Control": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\Pill_Control.usercontrol.json",
+      "id": "tchmi:project#/definitions/Pill_Control",
+      "type": "object"
+    },
+    "Start_Stop": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Buttons\\Start_Stop.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Start_Stop"
+    }
+  }
+}

@@ -1,0 +1,357 @@
+<div id="Feeder_Content" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="800" data-tchmi-creator-viewport-height="300">
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(8, 68, 102, 1)"
+}
+</script>
+<div id="TcHmiTextblock_16" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-text="  Feeder" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-creator-locked="True">
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(8, 68, 102, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 1.0,
+  "topRight": 1.0,
+  "bottomLeft": 1.0,
+  "bottomRight": 1.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+<div id="TitleInput_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Format Length (cm)" data-tchmi-top="14.9" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.nFormatLength_mm%/s%">
+</div>
+<div id="TitleInput_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="SuctionLength (cm)" data-tchmi-top="30.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.nSuctionLength_mm%/s%">
+</div>
+<div id="TitleInput_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Sheet Gap (cm)" data-tchmi-top="45.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.nSheetGap_mm%/s%">
+</div>
+<div id="TitleInput_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Single Sheet Time (s)" data-tchmi-top="60.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.tSingleSheetTime_s%/s%">
+</div>
+<div id="TitleInput_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="27.2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="DVP idle Off (s)" data-tchmi-top="15.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.tDVPIDleOff_s%/s%">
+</div>
+<div id="TitleInput_7" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="27.2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="DVP Start Delay (s)" data-tchmi-top="30.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.tDVPStartDelay_s%/s%">
+</div>
+<div id="TitleInput_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="27.2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Missing Sheets " data-tchmi-top="45.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.nMissingSheet%/s%">
+</div>
+<div id="TcHmiTextblock_17" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="16" data-tchmi-height-unit="%" data-tchmi-left="54.5" data-tchmi-left-unit="%" data-tchmi-text="Feeder Movement" data-tchmi-top="15.0" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="125" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-weight="Bold">
+</div>
+<div id="TcHmiTextblock_18" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="16" data-tchmi-height-unit="%" data-tchmi-left="67.8" data-tchmi-left-unit="%" data-tchmi-text="Vacuum Wheel &amp; Feeder" data-tchmi-top="15.0" data-tchmi-top-unit="%" data-tchmi-width="9.9" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="125" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-weight="Bold">
+</div>
+<div id="TitleInput_19" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="32" data-tchmi-height-unit="%" data-tchmi-left="82.6" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInputVertical.usercontrol" data-tchmi-title="Sheet Size (cm)" data-tchmi-top="15.0" data-tchmi-top-unit="%" data-tchmi-width="10.0" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.nSheetSize_mm%/s%">
+</div>
+<div id="TitleInput_30" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="27.2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Approach Stop (s)" data-tchmi-top="60.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.tApproachStop_s%/s%">
+</div>
+<div id="TitleInput_31" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2.0" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Compile Position (s)" data-tchmi-top="75.0" data-tchmi-top-unit="%" data-tchmi-width="20" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.FeederOp.tCompilePostion_s%/s%">
+</div>
+<div id="Std_Button_7" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="25" data-tchmi-height-unit="%" data-tchmi-left="67.7" data-tchmi-left-unit="%" data-tchmi-std_button_name="Start Feeder" data-tchmi-std_button_value="%s%PLC1.GVL.stHMI.FeederOp.bStartFeeder%/s%" data-tchmi-target-user-control="Buttons/Std_Button.usercontrol" data-tchmi-top="33.3" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%">
+</div>
+<div id="Std_Button_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="25" data-tchmi-height-unit="%" data-tchmi-left="67.7" data-tchmi-left-unit="%" data-tchmi-std_button_name="Stop Feeder" data-tchmi-std_button_value="%s%PLC1.GVL.stHMI.FeederOp.bStopFeeder%/s%" data-tchmi-target-user-control="Buttons/Std_Button.usercontrol" data-tchmi-top="63.3" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%">
+</div>
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "Feeder_Content.onMouseDoubleClick",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": false,
+        "sourceLines": [
+          "$('#TcHmiKeyboard').animate({top:'100%', left:'100%'})"
+        ],
+        "injectContextObject": false,
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
+<div id="TcHmiButton_24" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="25" data-tchmi-height-unit="%" data-tchmi-left="54.5" data-tchmi-left-unit="%" data-tchmi-text="" data-tchmi-top="33.3" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-background-image="Logo/up_arrow.png" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width="100" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="100" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%s%PLC1.GVL.stHMI.FeederOp.bFeederUp%/s%">
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(0, 135, 200, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 3.0,
+  "topRight": 3.0,
+  "bottomLeft": 3.0,
+  "bottomRight": 3.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(1, 0, 0, 1)"
+}
+</script>
+</div>
+<div id="TcHmiButton_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="25" data-tchmi-height-unit="%" data-tchmi-left="54.5" data-tchmi-left-unit="%" data-tchmi-text="" data-tchmi-top="63.3" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-background-image="Logo/down_arrow.png" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-width="100" data-tchmi-text-vertical-alignment="Top" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="100" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%s%PLC1.GVL.stHMI.FeederOp.bFeederDown%/s%">
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(0, 135, 200, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 3.0,
+  "topRight": 3.0,
+  "bottomLeft": 3.0,
+  "bottomRight": 3.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(1, 0, 0, 1)"
+}
+</script>
+</div>
+<div id="TcHmiButton_26" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="20" data-tchmi-height-unit="%" data-tchmi-left="83.6" data-tchmi-left-unit="%" data-tchmi-top="48.3" data-tchmi-top-unit="%" data-tchmi-width="7.5" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-background-image="Logo/plus_symbol.png" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width="100" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="100" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%s%PLC1.GVL.stHMI.FeederOp.bSheetSizeIncrease%/s%">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 100.0,
+  "topRight": 100.0,
+  "bottomLeft": 100.0,
+  "bottomRight": 100.0,
+  "topLeftUnit": "%",
+  "topRightUnit": "%",
+  "bottomLeftUnit": "%",
+  "bottomRightUnit": "%"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+</div>
+<div id="TcHmiButton_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="20" data-tchmi-height-unit="%" data-tchmi-left="83.6" data-tchmi-left-unit="%" data-tchmi-top="71.7" data-tchmi-top-unit="%" data-tchmi-width="7.5" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-background-image="Logo/minus_symbol.png" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width="100" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="100" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%s%PLC1.GVL.stHMI.FeederOp.bSheetSizeDecrease%/s%">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 100.0,
+  "topRight": 100.0,
+  "bottomLeft": 100.0,
+  "bottomRight": 100.0,
+  "topLeftUnit": "%",
+  "topRightUnit": "%",
+  "bottomLeftUnit": "%",
+  "bottomRightUnit": "%"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+</div>
+</div>

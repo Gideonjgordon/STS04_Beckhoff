@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN_OOP" Id="{88f51528-a200-4dab-bc17-0a74643b910e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN_OOP
+VAR
+	bStartButton : PB_NOpen;
+	bStopButton :PB_NOpen;
+	bEstopButton : PB_NClose;
+	bProcessStart : BOOL;
+	bProcessError : BOOL;
+	bProcessOverride : BOOL;
+	
+	//Feeder
+	bStartFeeder		: BOOL;
+	bStopFeeder			: BOOL;
+	bFeederError        : BOOL;
+	                   
+	bFeederAuto         : BOOL;
+	bFeederUpAuto       : BOOL;
+	bFeederDownAuto     : BOOL;
+	                   
+	bFeederManual       : BOOL;
+	bFeederUpManual     : BOOL;
+	bFeederDownManual   : BOOL;
+	
+	bFeederAtPos		: BOOL;
+	
+	// SAT
+	
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStartButton.IsPressed AND bStopButton.IsPressed THEN
+	bStartFeeder:=TRUE;
+END_IF
+IF bStopButton.IsPressed AND bStartButton.IsPressed THEN
+	bStopFeeder :=FALSE;
+END_IF
+
+P_MachineMain();
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN_OOP">
+      <LineId Id="5" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="31" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

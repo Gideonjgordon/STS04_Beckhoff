@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="StackerBeltTableState" Id="{84cfad0c-325a-4d8e-bc0f-db787bb8448a}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE StackerBeltTableState :
+(
+	State_Init 					,
+	State_AutoStart         	,
+	State_AutoStop          	,
+	State_StackerStart			,
+	State_StackerStop	        ,
+	State_Override				,
+	State_Error					
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

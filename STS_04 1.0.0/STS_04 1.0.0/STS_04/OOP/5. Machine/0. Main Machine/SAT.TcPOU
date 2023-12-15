@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SAT" Id="{948e0ac6-ae65-4c94-b7cd-dfb2a0ed80d3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK SAT IMPLEMENTS MachineModule
+VAR
+	bEnable			: BOOL;
+	bDisable        : BOOL;
+	bError          : BOOL;
+	bOverride       : BOOL;
+	bSimulation     : BOOL;
+	bStart          : BOOL;
+	bStop           : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// This is the core module needed that we are creating for our STS and contains everything related to the STS
+
+// To be added
+(*
+FEEDER
+
+SAT
+
+VBT
+
+EJECT
+
+GATE
+
+SBT
+
+*)]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{5e86057e-6890-4f43-bb81-e98513f8c202}">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{71274df4-0a05-4959-b444-38e8c80a464b}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=TRUE;
+bDisable:=False;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Error" Id="{0ab8f348-744d-48b4-b5e0-eaebf6040d04}">
+      <Declaration><![CDATA[METHOD Error : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Override" Id="{927c0db9-5b10-4b75-ba46-3e285b30c6ad}">
+      <Declaration><![CDATA[METHOD Override : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{b6d1550e-3880-446a-9451-6a93dd56d0bf}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{7a2b105a-6841-4d93-8a66-d106007db900}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StateMachine" Id="{c6dcb0ef-7831-4a12-af30-96f167333d50}">
+      <Declaration><![CDATA[METHOD PUBLIC StateMachine
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{892d6684-3aec-4152-8a75-d7d9c0ca91de}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="SAT">
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.Disable">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.Enable">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="SAT.Error">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.Override">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.Reset">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.StateMachine">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SAT.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

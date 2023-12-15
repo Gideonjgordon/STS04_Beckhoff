@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Sensor_Trigger" Id="{989a519e-157f-43a1-bd04-99f835a50575}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Sensor_Trigger implements O_Sensor
+VAR
+	bOutput AT %Q* : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="isTriggered" Id="{d41d1f0e-91df-4526-9abe-c5b6a9542aa8}">
+      <Declaration><![CDATA[PROPERTY isTriggered : BOOL]]></Declaration>
+      <Get Name="Get" Id="{522e1a2e-332e-482f-8b7b-83941e2bb972}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[isTriggered:=bOutput;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="Sensor_Trigger">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="Sensor_Trigger.isTriggered.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

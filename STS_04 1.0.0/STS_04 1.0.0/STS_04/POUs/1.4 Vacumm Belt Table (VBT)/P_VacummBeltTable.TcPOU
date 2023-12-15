@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_VacummBeltTable" Id="{712b94c2-ba3b-4131-911d-4dda9faec154}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_VacummBeltTable
+VAR
+		(*Initialization*)
+	bVBT_OK		: BOOL;
+	bError		: BOOL;
+	bStart		: BOOL;
+	bStop		: BOOL;
+	(*Process*)
+	bVacEnable 	: BOOL;
+	bVacOn		: BOOL;
+	bVacOff		: BOOL;
+	bOverride	: BOOL;
+	(*VBT-Only Process*)
+	bCuringDone	: BOOL;
+	bGateCloseStatus	: BOOL;
+	bBadSheetSignal		: BOOL;
+	//-----------------------------------------(*Case*)-----------------------------------------------------
+	
+	(* Reference for VBT
+
+	State_Init 					,
+	State_AutoStart         	,
+	State_AutoStop          	,
+	State_AutoVacOn				,
+	State_VacOff				,
+	State_AutoBackToInit        ,
+	State_Override				,
+	State_Error		
+
+	*)	
+	
+END_VAR
+VAR_INPUT
+	bStartCommand : BOOL;
+END_VAR
+VAR_OUTPUT
+	iVBTcase : INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE iVBTcase OF
+	
+VacuumBeltTableState.State_Init :
+	IF bVBT_OK AND bStartCommand AND 
+	   (NOT bError) THEN
+		iVBTcase:=VacuumBeltTableState.State_AutoStart;
+	ELSE
+		iVBTcase := VacuumBeltTableState.State_Init;
+	END_IF
+	bStart:=bStart;
+	
+VacuumBeltTableState.State_AutoStart :
+	bStart:=TRUE;
+	iVBTcase:=VacuumBeltTableState.State_AutoVacOn;
+	
+VacuumBeltTableState.State_AutoVacOn :
+	(*Main Business logic*)
+	IF NOT bError AND bCuringDone AND bGateCloseStatus THEN	
+			IF bStop THEN
+				iVBTcase := VacuumBeltTableState.State_VacOff;
+			END_IF
+		iVBTcase := iVBTcase;		
+	END_IF
+	IF bError THEN
+		iVBTcase:=VacuumBeltTableState.State_Error;
+	END_IF
+
+	
+VacuumBeltTableState.State_VacOff :
+	iVBTcase:= VacuumBeltTableState.State_AutoStop;
+	
+VacuumBeltTableState.State_AutoStop :
+	iVBTcase:= VacuumBeltTableState.State_AutoBackToInit;
+	
+VacuumBeltTableState.State_AutoBackToInit :
+	iVBTcase := VacuumBeltTableState.State_Init;
+	
+VacuumBeltTableState.State_Error :
+	iVBTcase:=VacuumBeltTableState.State_Init;
+VacuumBeltTableState.State_Override :
+	;
+	//iVBTcase:=;
+	
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="P_VacummBeltTable">
+      <LineId Id="5" Count="0" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="64" Count="4" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="137" Count="1" />
+      <LineId Id="135" Count="1" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="132" Count="2" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="86" Count="1" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="40" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

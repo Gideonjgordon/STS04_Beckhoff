@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EjectionGate" Id="{da28725f-c96c-4149-b087-60e361176424}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EjectionGate IMPLEMENTS MachineModule
+VAR
+	bEnable			: BOOL;
+	bDisable        : BOOL;
+	bError          : BOOL;
+	bOverride       : BOOL;
+	bSimulation     : BOOL;
+	bStart          : BOOL;
+	bStop           : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// This is the core module needed that we are creating for our STS and contains everything related to the STS
+
+// To be added
+(*
+FEEDER
+
+SAT
+
+VBT
+
+EJECT
+
+GATE
+
+SBT
+
+*)]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{30f9b8a1-fce6-48d7-a259-36e2cfdd0e0a}">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{c8d000f4-193e-4fa6-a733-11f5e48ad0fd}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=TRUE;
+bDisable:=False;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Error" Id="{2aabecdd-e1c0-4a1a-8bde-b8d8832784f9}">
+      <Declaration><![CDATA[METHOD Error : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Override" Id="{d3433c37-471c-4059-a5e9-093e7b9dbe69}">
+      <Declaration><![CDATA[METHOD Override : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{e5968cc0-0142-4d07-8ec1-555714f14f73}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{28cad696-c7b9-4fd9-baa1-70b346ed0d77}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StateMachine" Id="{2967c8e0-1a88-47c6-85bb-06a288e4b591}">
+      <Declaration><![CDATA[METHOD PUBLIC StateMachine
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{ce3ad334-fff8-4810-9c73-ab75a82d93bf}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="EjectionGate">
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Disable">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Enable">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Error">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Override">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Reset">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.StateMachine">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EjectionGate.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

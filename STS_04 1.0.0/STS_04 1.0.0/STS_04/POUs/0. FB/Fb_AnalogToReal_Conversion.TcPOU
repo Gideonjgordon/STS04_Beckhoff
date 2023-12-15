@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Fb_AnalogToReal_Conversion" Id="{420ab8ec-5ef5-487b-ab0f-52224fffdeca}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Fb_AnalogToReal_Conversion
+VAR_INPUT
+	iRawVal : UINT;
+	iMinVal	: UINT;
+	iMaxVal	: UINT;
+	
+END_VAR
+VAR_OUTPUT
+	lActualVal	: REAL;				//Actual converted value
+	bError		: BOOL;
+END_VAR           
+VAR               
+	lRangeHigh	: REAL := 32676;
+	lRawVal 	: REAL;
+	lMinVal		: REAL;
+	lMaxVal		: REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[lRawVal	:=UINT_TO_REAL(iRawVal);
+lMinVal	:=UINT_TO_REAL(iMinVal);
+lMaxVal	:=UINT_TO_REAL(iMaxVal);
+
+IF iRawVal<=0 THEN
+	lActualVal:=0;
+END_IF
+
+IF NOT iRawVal>0 AND iRawVal<=lRangeHigh THEN	
+	lActualVal := ((lMaxVal-lMinVal)/(lRangeHigh-0))*lRawVal+lMinVal;
+	bError:=FALSE;
+ELSE
+	bError:=TRUE;	
+END_IF
+
+
+
+]]></ST>
+    </Implementation>
+    <Method Name="Error_Check" Id="{8952912d-742b-42c7-aa0e-5d176a00600a}">
+      <Declaration><![CDATA[METHOD Error_Check : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="RawToRealConversion" Id="{466f3449-b983-4009-942e-d1e81a74a8c4}">
+      <Declaration><![CDATA[METHOD RawToRealConversion : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="Fb_AnalogToReal_Conversion">
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="33" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="54" Count="1" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="24" Count="0" />
+    </LineIds>
+    <LineIds Name="Fb_AnalogToReal_Conversion.Error_Check">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Fb_AnalogToReal_Conversion.RawToRealConversion">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

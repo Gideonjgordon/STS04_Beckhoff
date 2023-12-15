@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="dutVisuMain" Id="{a18cbfa0-7328-4a87-bc00-23e582c29fed}">
+    <Declaration><![CDATA[TYPE dutVisuMain :
+STRUCT
+	(*Main Control*)
+	bStartMachine			:BOOL;
+	bStopMachine            :BOOL;
+	bIncreaseMachineSpeed   :BOOL;
+	bDecreaseMachineSpeed   :BOOL;
+	                       
+	nSheetCountAccepted     :INT;
+	nSheetCountRejected     :INT;
+	                        
+	bSimulationMode         :BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

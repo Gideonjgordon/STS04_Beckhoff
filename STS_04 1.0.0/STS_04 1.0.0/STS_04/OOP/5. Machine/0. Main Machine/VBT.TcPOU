@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="VBT" Id="{cec5e054-0329-4fa9-83b2-adb3800b30c6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK VBT IMPLEMENTS MachineModule
+VAR
+	bEnable			: BOOL;
+	bDisable        : BOOL;
+	bError          : BOOL;
+	bOverride       : BOOL;
+	bSimulation     : BOOL;
+	bStart          : BOOL;
+	bStop           : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// This is the core module needed that we are creating for our STS and contains everything related to the STS
+
+// To be added
+(*
+FEEDER
+
+SAT
+
+VBT
+
+EJECT
+
+GATE
+
+SBT
+
+*)]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{945decf1-cc3b-4249-bcf7-a5ed9082fc2f}">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{8b4709de-56a3-4871-8de2-ce3de4c3d3f3}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=TRUE;
+bDisable:=False;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Error" Id="{b50cb842-6df4-4043-b5c5-ed9e5d560ad8}">
+      <Declaration><![CDATA[METHOD Error : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Override" Id="{4de31e82-6ee8-433f-8e5d-89f9b09e6bc8}">
+      <Declaration><![CDATA[METHOD Override : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{df34af96-b1fb-41af-b3f5-4280fcd2af5f}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StateMachine" Id="{dc2d00cb-2e39-4ebc-915b-dbf5c98e2b23}">
+      <Declaration><![CDATA[METHOD PUBLIC StateMachine
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{76b10ce9-f27e-4523-814b-cf31943a6760}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="VBT">
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+    <LineIds Name="VBT.Disable">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VBT.Enable">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="VBT.Error">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VBT.Override">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VBT.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VBT.StateMachine">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VBT.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_StackerBeltTable" Id="{4d1169e7-1b8b-4f1c-bb90-5ea28424f6d7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_StackerBeltTable
+VAR
+		(*Initialization*)
+	bSBT_OK		: BOOL;
+	bError		: BOOL;
+	bStart		: BOOL;
+	bStop		: BOOL;
+	(*Process*)
+	bSBTEnable 	: BOOL;
+	bSBTOn		: BOOL;
+	bSBTOff		: BOOL;
+	bOverride	: BOOL;
+	//-----------------------------------------(*Case*)-----------------------------------------------------
+	
+	(* Reference for SBT
+
+	State_Init 					,
+	State_AutoStart         	,
+	State_AutoStop          	,
+	State_StackerStart			,
+	State_StackerStop	        ,
+	State_Override				,
+	State_Error		
+
+	*)	
+	
+END_VAR
+VAR_INPUT
+	bStartCommand : BOOL;
+END_VAR
+VAR_OUTPUT
+	iSBTcase : INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE iSBTcase OF
+StackerBeltTableState.State_Init			:
+	IF bStartCommand 
+	AND bSBT_OK 
+	AND(NOT bError) THEN
+		iSBTcase:=StackerBeltTableState.State_AutoStart;
+	ELSE
+		iSBTcase:=StackerBeltTableState.State_Error;
+	END_IF 
+
+StackerBeltTableState.State_AutoStart       :
+	bSBTEnable	:= TRUE;
+	iSBTcase	:= StackerBeltTableState.State_StackerStart;
+
+StackerBeltTableState.State_AutoStop        :
+
+StackerBeltTableState.State_StackerStart    : //Business Logic
+	iSBTCase := StackerBeltTableState.State_Error;
+	
+
+StackerBeltTableState.State_StackerStop     : // Business Logic
+	iSBTCase := StackerBeltTableState.State_Error;
+
+StackerBeltTableState.State_Error           :
+	IF (NOT bError) AND bSBTEnable THEN
+		iSBTCase:=StackerBeltTableState.State_AutoStart;	
+	END_IF
+	IF bError THEN
+		iSBTCase:=StackerBeltTableState.State_Init;	
+	END_IF
+
+StackerBeltTableState.State_Override        :
+;
+
+	
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="P_StackerBeltTable">
+      <LineId Id="5" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="87" Count="4" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="92" Count="1" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="71" Count="2" />
+      <LineId Id="45" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

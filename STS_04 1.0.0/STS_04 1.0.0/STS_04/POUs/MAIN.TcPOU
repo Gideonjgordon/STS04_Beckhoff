@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{8bcade6c-ec1f-4118-bf4e-b1ed3c6ae3d8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fb_Test_Conversion : Fb_AnalogToReal_Conversion;
+	ntest: LREAL;
+	fb_testR2A: Fb_RealToAnalog_Conversion;
+	stTestString : STRING :='Added this for 1.0.1';
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[P_Test();
+P_Feeder();
+P_SheetAlignTable();
+P_VacummBeltTable();
+P_EjectionGate();
+P_StackerBeltTable();
+P_AllStateChecker();
+P_GeneralStateManager();
+//PRG_TEST();
+
+fb_Test_Conversion(iRawVal:= , iMinVal:=0 , iMaxVal:=180 , lActualVal=>ntest );
+fb_testR2A(lActualVal:= , lMinVal:=50 , lMaxVal:=100 , iRawVal=> );
+
+//OOP Test
+MAIN_OOP();
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="41" Count="3" />
+      <LineId Id="33" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

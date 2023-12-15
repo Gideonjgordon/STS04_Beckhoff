@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Raw2Analog_Test" Id="{66030279-90e4-4cb9-bc05-556eb179e71a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Raw2Analog_Test extends FB_TestSuite
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TestRawVal2RealValConversion();]]></ST>
+    </Implementation>
+    <Method Name="TestRawVal2RealValConversion" Id="{67624053-74d8-4f14-acd7-348479c02ac2}">
+      <Declaration><![CDATA[METHOD PRIVATE TestRawVal2RealValConversion EXTENDS FB_TestSuite
+VAR
+	Fb_Raw2Analog	: Fb_AnalogToReal_Conversion;
+	nReal : REAL;
+	bError : BOOL;
+END_VAR
+  ]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TEST('TestRawVal2RealValConversion');
+
+//Value 1 test
+Fb_Raw2Analog(iRawVal:=32676 , iMinVal:=0 , iMaxVal:=100 , lActualVal=> , bError =>bError );
+AssertEquals_REAL(	Expected :=100,
+					Actual:=Fb_Raw2Analog.lActualVal,
+					Delta:= 0.5,
+					Message:='Expected Delta < 0.5');
+
+TEST_FINISHED();]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Raw2Analog_Test">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Raw2Analog_Test.TestRawVal2RealValConversion">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="4" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="GeneralStateCommand" Id="{5ddb1eab-d085-4279-b1b9-2a99f751bad2}">
+    <Declaration><![CDATA[TYPE GeneralStateCommand :
+STRUCT
+	
+	bStart		:BOOL;
+	bStop       :BOOL;
+	bOverride   :BOOL;
+	bReset		:BOOL;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

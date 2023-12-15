@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_AllStateChecker" Id="{985017dc-d89e-49af-aaa8-dfefe2cd487c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_AllStateChecker
+VAR
+	(*
+		Author - Gideon Jgordon (GJ)
+		Changes 
+		-(GJ) stGSM moved here
+	*)	
+	bAllOk : BOOL;	// All OK process
+	//bSAT_OK: BOOL;  //SAT Process OK
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF P_GeneralStateManager.nStateGeneral =GeneralStateMain.State_ErrorCheck THEN
+	gvl.stGSM.bStop			:=TRUE;
+	gvl.stGSM.bOverride		:=FALSE;
+	gvl.stGSM.bStart		:=FALSE;
+	gvl.stGSM.bReset		:=TRUE;	
+END_IF
+
+IF P_GeneralStateManager.nStateGeneral =GeneralStateMain.State_Init THEN
+	gvl.stGSM.bStop		   :=TRUE;
+	gvl.stGSM.bOverride	   :=TRUE;
+	gvl.stGSM.bStart	   :=FALSE;
+	gvl.stGSM.bReset	   :=FALSE;	
+END_IF
+
+IF P_GeneralStateManager.nStateGeneral =GeneralStateMain.State_Reset THEN
+	gvl.stGSM.bStop		   :=TRUE;
+	gvl.stGSM.bOverride	   :=FALSE;
+	gvl.stGSM.bStart	   :=FALSE;
+	gvl.stGSM.bReset	   :=TRUE;	
+END_IF
+
+IF P_GeneralStateManager.nStateGeneral =GeneralStateMain.State_Run THEN
+	gvl.stGSM.bStop		   :=TRUE;
+	gvl.stGSM.bOverride	   :=FALSE;
+	gvl.stGSM.bStart	   :=FALSE;
+	gvl.stGSM.bReset	   :=FALSE;
+END_IF
+
+IF P_GeneralStateManager.nStateGeneral =GeneralStateMain.State_Stop THEN
+	gvl.stGSM.bStop		   :=TRUE;
+	gvl.stGSM.bOverride	   :=FALSE;
+	gvl.stGSM.bStart	   :=FALSE;
+	gvl.stGSM.bReset	   :=FALSE;
+END_IF
+
+IF  	P_Feeder.bFeederOK 
+	AND P_SheetAlignTable.bSAT_OK 
+	AND P_VacummBeltTable.bVBT_OK
+	AND P_EjectionGate.bEJ_OK
+	AND P_StackerBeltTable.bSBT_OK		THEN
+	bAllok:=TRUE;
+ELSE
+	bAllok:=FALSE;	
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="P_AllStateChecker">
+      <LineId Id="7" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="42" Count="2" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="31" Count="2" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="24" Count="1" />
+      <LineId Id="37" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="28" Count="1" />
+      <LineId Id="39" Count="2" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="85" Count="2" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="59" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

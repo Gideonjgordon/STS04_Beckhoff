@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Fb_FeedingStateCheck" Id="{8010df5e-b43a-4c51-8bc4-6969c2a277ea}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Fb_FeedingStateCheck
+VAR_INPUT
+	dut_FeedingState : FeedingState;
+END_VAR
+VAR_OUTPUT
+	iReadableFeedingState : INT; // number which represent the state
+END_VAR
+VAR
+	iBareNum : INT; // number we use to cycle through the FeedingState
+	iLastFeedingState : FeedingState;
+	
+	nCaseNumberCycler : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nCaseNumberCycler OF
+0: //Check if number is 0 or not. As 0 would represent initialized state
+	//Also check whether it is there are any state changes or not
+	IF (dut_FeedingState = iLastFeedingState ) THEN
+		nCaseNumberCycler:=0;
+	ELSE
+		nCaseNumberCycler:=10;
+	END_IF
+	
+10: //Cycling
+	FOR iBareNum:=0 TO 11 BY 1 DO
+		IF iBareNum < dut_FeedingState THEN
+			iBareNum:=iBareNum+1;
+		END_IF
+		IF iBareNum > dut_FeedingState THEN
+			iBareNum:=iBareNum-1;
+		END_IF
+		
+	END_FOR
+nCaseNumberCycler:=50;
+50:	
+nCaseNumberCycler:=0;
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="Fb_FeedingStateCheck">
+      <LineId Id="9" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="42" Count="5" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="23" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

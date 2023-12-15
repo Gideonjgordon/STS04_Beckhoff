@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Sensor_NClose" Id="{f6f1ca14-2fe4-4d15-9932-61636ed7cf4a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Sensor_NClose IMPLEMENTS I_Sensor
+VAR
+	bInput AT %I* : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="isActive" Id="{fa14f7d1-9931-4481-aef8-1bfb71f540bd}">
+      <Declaration><![CDATA[PROPERTY isActive : BOOL]]></Declaration>
+      <Get Name="Get" Id="{b8924d53-115a-44c0-9e78-c8cb723bf907}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[isActive:= not bInput;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="notActive" Id="{a0d9e939-ff52-4ece-8594-ba4894b9c6fe}">
+      <Declaration><![CDATA[PROPERTY notActive : BOOL]]></Declaration>
+      <Get Name="Get" Id="{5367e314-78d1-42be-b8e8-9cdb4c9b8399}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[isActive := bInput;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="Sensor_NClose">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="Sensor_NClose.isActive.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Sensor_NClose.notActive.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

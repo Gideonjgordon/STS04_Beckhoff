@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="O_Sensor" Id="{1bb325d0-1cfe-4fee-8786-696ebce98699}">
+    <Declaration><![CDATA[INTERFACE O_Sensor
+]]></Declaration>
+    <Property Name="isTriggered" Id="{6eeb55dd-f52f-4836-a1f2-b796588547c0}">
+      <Declaration><![CDATA[PROPERTY isTriggered : BOOL]]></Declaration>
+      <Get Name="Get" Id="{33fe77af-4230-4f6d-8b1f-93cae4f77eea}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

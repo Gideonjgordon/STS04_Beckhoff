@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PB_NClose" Id="{a1a7af06-1a69-43db-8e36-2eb7e4bcd7bc}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PB_NClose IMPLEMENTS I_PB
+VAR
+	bInput AT %I* :BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="IsPressed" Id="{40e0ad5d-188e-46aa-9ed4-be43e8d7b340}">
+      <Declaration><![CDATA[PROPERTY IsPressed : BOOL
+// Property of PB button when it is pressed but for normally close]]></Declaration>
+      <Get Name="Get" Id="{4033bcc6-b0ea-4998-aa96-814f7b7ad96f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsPressed := NOT bInput;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="IsReleased" Id="{571fd946-95ad-49f2-9584-6c4b24753cc6}">
+      <Declaration><![CDATA[PROPERTY IsReleased : BOOL
+// Property of PB button when it is Released State but for normally close]]></Declaration>
+      <Get Name="Get" Id="{2a8bf035-293e-448d-8ff4-3da0eb191b20}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsReleased := bInput;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="PB_NClose">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="PB_NClose.IsPressed.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="PB_NClose.IsReleased.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="MachineModule" Id="{9cc13ac0-9e32-4633-97f7-ab903f866cbd}">
+    <Declaration><![CDATA[INTERFACE MachineModule
+]]></Declaration>
+    <Method Name="Disable" Id="{e3d71374-6943-44dc-b3d7-501cc0699776}">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Enable" Id="{b071d7c3-d79a-48ca-9d34-665265cc252c}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Error" Id="{d1f1a371-e246-49ce-990d-d43537ae114a}">
+      <Declaration><![CDATA[METHOD Error : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Override" Id="{c508e5ea-5406-4b95-abd3-ad912633f6e1}">
+      <Declaration><![CDATA[METHOD Override : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Reset" Id="{3f5893ed-87dd-4009-9852-f204cb36c8d5}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{698ce134-3fe1-4b1d-ac2b-b11e0bc3d599}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="StateMachine" Id="{716d5177-bb69-4d4a-bd0d-a43d9765b498}">
+      <Declaration><![CDATA[METHOD PUBLIC StateMachine
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{b9629953-4649-4457-9df7-2d3860a29da5}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

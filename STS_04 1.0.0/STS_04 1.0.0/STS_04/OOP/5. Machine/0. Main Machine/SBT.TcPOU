@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SBT" Id="{a1135cdb-167b-4fe2-8ee0-f9a094475996}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK SBT IMPLEMENTS MachineModule
+VAR
+	bEnable			: BOOL;
+	bDisable        : BOOL;
+	bError          : BOOL;
+	bOverride       : BOOL;
+	bSimulation     : BOOL;
+	bStart          : BOOL;
+	bStop           : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// This is the core module needed that we are creating for our STS and contains everything related to the STS
+
+// To be added
+(*
+FEEDER
+
+SAT
+
+VBT
+
+EJECT
+
+GATE
+
+SBT
+
+*)]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{a85da843-6af5-4c59-9648-6b66c1a39a28}">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{803ba3ae-99bc-44de-8d22-6c03af03061b}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=TRUE;
+bDisable:=False;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Error" Id="{ac5ae575-af06-444c-84ea-84013cff3df0}">
+      <Declaration><![CDATA[METHOD Error : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Override" Id="{169ffa85-df2c-4b2e-a466-3e052ab788bd}">
+      <Declaration><![CDATA[METHOD Override : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{3b6b125f-3337-4662-bcfd-2dd9ce78e7f0}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{ec57ec5a-7fc3-48d8-ae55-9cd26dae6ba1}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StateMachine" Id="{356580bc-9cc1-4ae7-aeda-0340140a8b43}">
+      <Declaration><![CDATA[METHOD PUBLIC StateMachine
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{adfbd9b0-30a5-4f90-a0b5-477935bf1b6d}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="SBT">
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.Disable">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.Enable">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="SBT.Error">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.Override">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.Reset">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.StateMachine">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="SBT.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

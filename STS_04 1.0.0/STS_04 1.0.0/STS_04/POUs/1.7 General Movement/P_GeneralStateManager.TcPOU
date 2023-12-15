@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_GeneralStateManager" Id="{527686d1-db88-4d1f-8d7e-14a8310b3953}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_GeneralStateManager
+VAR
+	(*
+		Author - Gideon Jgordon (GJ)
+		Changes 
+		-(GJ) Added to govern the General State of the STS04 Machine 
+		-(GJ) stGSM moved to P_AllStateChecker to make it cleaner
+	*)	
+	nStateGeneral : INT;
+	bValuesResetDone: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nStateGeneral OF
+
+GeneralStateMain.State_Init				: //Initialize all the state
+
+	IF gvl.stHMI.bStart THEN
+		nStateGeneral:= GeneralStateMain.State_Reset;
+		ELSE
+		nStateGeneral:=	GeneralStateMain.State_Init;
+	END_IF	
+	
+GeneralStateMain.State_Reset			: // Reset behaviour and values befor we proceed to go into Run Mode
+
+	//Adding reset below here
+	IF (bValuesResetDone AND P_AllStateChecker.bAllOk) THEN
+		nStateGeneral:=GeneralStateMain.State_Run;
+		gvl.stGSM.bStart	:=TRUE;
+	END_IF
+	IF NOT (bValuesResetDone AND P_AllStateChecker.bAllOk) THEN
+		nStateGeneral:=GeneralStateMain.State_Init;
+	END_IF
+	
+GeneralStateMain.State_Run              : // Governs the Process during run
+
+	IF NOT P_AllStateChecker.bAllOk THEN
+		gvl.stGSM.bStart	:=FALSE;
+	END_IF
+	IF gvl.stHMI.bStop THEN
+		nStateGeneral:= GeneralStateMain.State_Stop;
+		gvl.stGSM.bStart	:=FALSE;
+	END_IF
+	
+GeneralStateMain.State_Stop             : //Stop via HMI or Error
+
+	nStateGeneral:= GeneralStateMain.State_Init;
+	
+GeneralStateMain.State_ErrorCheck       :
+
+	
+	
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="P_GeneralStateManager">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="69" Count="1" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="56" Count="1" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="74" Count="2" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="79" Count="5" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="118" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

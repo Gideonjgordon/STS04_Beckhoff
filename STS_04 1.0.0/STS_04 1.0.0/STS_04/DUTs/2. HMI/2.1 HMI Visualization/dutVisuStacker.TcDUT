@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="dutVisuStacker" Id="{8365ea08-d4b9-4c93-8936-519aaf3cc60a}">
+    <Declaration><![CDATA[TYPE dutVisuStacker :
+STRUCT
+	(*Values linked to HMI*)
+	(*Stacker Operational values*)
+	tOpenOscillator_s				: INT;
+	tCloseJOgger_s      			: int;
+	tDownBlas_ms        			: int;
+	tDescentPulse_ms    			: int;
+	                    			
+	(*Stacker Plate Movement*)
+	bStackerPlateUp					: BOOL;
+	bStackerPlateDown   			: bool;
+	                    			
+	(*Alignment*)       	
+	nAlignmentRation_n				: INT; (*ratio alignment, how many sheets has passed for alignment to trigger*)
+
+	(*Brake Adjustment Control*)
+	bIncreaseBrakeSpeedRatio		: BOOL;	
+	bDecreaseBrakeSpeedRatio        : BOOL;
+	nBrakeSpeedRatio                : INT;
+	                                
+	bIncreaseBrakeLength            : BOOL;
+	bDecreaseBrakeLength            : BOOL;
+	nBrakeSpeedLength               : INT;
+	                               
+	bIncreaseIntersheet             : BOOL;
+	bDecreaseIntersheet	            : BOOL;
+	nIntersheet                     : INT;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

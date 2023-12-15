@@ -1,0 +1,87 @@
+<div id="BW_SBT_Content" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="800" data-tchmi-creator-viewport-height="300">
+
+<div id="TcHmiTextblock_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-text="  Rejection" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-text-vertical-alignment="Center">
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(8, 68, 102, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+
+
+
+<div id="TitleInput_27" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Detect Jam Duration (s)" data-tchmi-top="16.0" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.EjectionOP.tDetectJamDuration_s%/s%">
+</div>
+<div id="TitleInput_28" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2.0" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Brake distance (mm)" data-tchmi-top="31.0" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.EjectionOP.nBrakeDistance_mm%/s%">
+</div>
+<div id="TitleInput_29" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="2.0" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Brake Pulse (ms)" data-tchmi-top="46.0" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.EjectionOP.tBrakePulse_ms%/s%">
+</div>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(8, 68, 102, 1)"
+}
+</script>
+</div>

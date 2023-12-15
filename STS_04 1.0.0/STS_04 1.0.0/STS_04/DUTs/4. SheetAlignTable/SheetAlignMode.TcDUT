@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="SheetAlignMode" Id="{19fc83d6-ace8-4d37-80d5-b5d46c0e4e26}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE SheetAlignMode :
+(
+	Mode_Standard	:= 0,
+	Mode_Manual		:= 1,
+	Mode_Simulation	:= 2
+	
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

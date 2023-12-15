@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_EjectionGate" Id="{6064b460-bcdf-4343-8336-f08ee00714f6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_EjectionGate
+VAR
+		(*Initialization*)
+	bEJ_OK		: BOOL;
+	bError		: BOOL;
+	bStart		: BOOL;
+	bStop		: BOOL;
+	(*Process*)
+	bEjEnable 	: BOOL;
+	bEjectOn	: BOOL;
+	bEjectOff	: BOOL;
+	bOverride	: BOOL;
+	(*Ejection Gate Specific Process*)
+	bSheetStuck		: BOOL;
+	bSheetPresence		: BOOL;
+	nSheetCount		: INT;
+	FB_SheetCount_Trig	: R_TRIG;
+	tSheetStuck_s	: TIME :=T#5S ;
+	
+	
+	//-----------------------------------------(*Case*)-----------------------------------------------------
+	
+	(* Reference for VBT
+
+	State_Init 					,
+	State_AutoStart         	,
+	State_AutoStop          	,
+	State_AutoEjectOn			,
+	State_AutoBackToInit        ,
+	State_Override				,
+	State_Error			
+	*)	
+	
+	asd: R_TRIG;
+	FbSheetStuckCheck: TON;
+END_VAR
+VAR_INPUT
+	bStartCommand : BOOL;
+END_VAR
+VAR_OUTPUT
+	iEJcase : INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE iEJcase OF
+EjectionGateState.State_Init			:	
+
+	IF (bEJ_OK AND bStartCommand)  
+	AND NOT bError THEN
+		iEJcase:= EjectionGateState.State_AutoStart;
+	END_IF 
+	IF bError THEN
+		iEJcase:= EjectionGateState.State_Error;
+	END_IF
+
+   
+EjectionGateState.State_AutoStart     	:
+	IF bStop THEN
+		iEJcase:= EjectionGateState.State_AutoStop;
+	ELSE
+		iEJcase :=EjectionGateState.State_AutoEjectOn;
+	END_IF
+
+
+EjectionGateState.State_AutoStop      	:
+	iEJcase:= EjectionGateState.State_AutoBackToInit;
+
+
+EjectionGateState.State_AutoEjectOn	  	:
+	(*Insert business logic here*)
+	(*Ejection*)
+	IF P_VacummBeltTable.bBadSheetSignal THEN
+		bEjectOn :=TRUE;
+	END_IF // Need to add business logic to count for speed/time on-site.
+	
+	(*Sheet Counting*)
+	FB_SheetCount_Trig(CLK:= bSheetPresence, Q=> );
+	IF FB_SheetCount_Trig.Q THEN
+		nSheetCount:=nSheetCount+1;
+	END_IF
+	FbSheetStuckCheck(IN:=bSheetPresence , PT:=tSheetStuck_s , Q=> , ET=> );
+	IF FbSheetStuckCheck.Q THEN
+		bSheetStuck:=TRUE;
+		iEJcase:= EjectionGateState.State_Error;
+	END_IF
+
+
+EjectionGateState.State_AutoBackToInit	:
+	iEJcase:= EjectionGateState.State_Init;
+
+
+EjectionGateState.State_Override		:   
+	;
+
+
+EjectionGateState.State_Error			:     
+	IF bError THEN
+		iEJcase:= EjectionGateState.State_AutoBackToInit;
+	END_IF
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="P_EjectionGate">
+      <LineId Id="5" Count="0" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="114" Count="2" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="117" Count="1" />
+      <LineId Id="120" Count="1" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="125" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="187" Count="2" />
+      <LineId Id="186" Count="0" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="168" Count="0" />
+      <LineId Id="173" Count="3" />
+      <LineId Id="178" Count="1" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="127" Count="0" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="129" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="122" Count="2" />
+      <LineId Id="87" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

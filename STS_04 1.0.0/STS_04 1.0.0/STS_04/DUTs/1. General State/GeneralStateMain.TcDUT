@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="GeneralStateMain" Id="{f4b090dd-be65-4d97-90c3-7eefbd10645d}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE GeneralStateMain :
+(
+	
+	State_Init			,
+	State_Reset         ,
+	State_Run	        ,
+	State_Stop          ,
+	State_ErrorCheck       
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

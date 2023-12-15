@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "data-tchmi-title",
+      "displayName": "Title",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "defaultValue": "Insert_Title",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "Title",
+      "propertySetterName": "setTitle",
+      "propertyGetterName": "getTitle",
+      "refTo": ""
+    },
+    {
+      "name": "data-tchmi-increment",
+      "displayName": "Increment",
+      "visible": true,
+      "type": "tchmi:general#/definitions/BOOL",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "Increment",
+      "propertySetterName": "setIncrement",
+      "propertyGetterName": "getIncrement",
+      "refTo": ""
+    },
+    {
+      "name": "data-tchmi-minus",
+      "displayName": "Minus",
+      "visible": true,
+      "type": "tchmi:general#/definitions/BOOL",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "Minus",
+      "propertySetterName": "setMinus",
+      "propertyGetterName": "getMinus",
+      "refTo": ""
+    },
+    {
+      "name": "data-tchmi-value",
+      "displayName": "Value",
+      "visible": true,
+      "type": "tchmi:general#/definitions/REAL32",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "Value",
+      "propertySetterName": "setValue",
+      "propertyGetterName": "getValue",
+      "refTo": ""
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.758.8/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

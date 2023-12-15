@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_MachineMain" Id="{07331880-3efd-4696-8ef8-3d874ebc5946}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_MachineMain
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_OOP.fbFeeder();
+GVL_OOP.fbSTS();]]></ST>
+    </Implementation>
+    <LineIds Name="P_MachineMain">
+      <LineId Id="12" Count="0" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

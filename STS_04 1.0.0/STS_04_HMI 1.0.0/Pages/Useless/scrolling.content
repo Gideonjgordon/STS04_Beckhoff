@@ -1,0 +1,11 @@
+<div id="scrolling" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="640" data-tchmi-creator-viewport-height="900">
+
+<div id="TcHmiRegion_4" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="500" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="500" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-scrolling="Yes">
+</div>
+<div id="TcHmiGrid" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="900" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px">
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" id="TcHmiRectangle" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="50" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="300" data-tchmi-width-unit="px" data-tchmi-right-unit="%" data-tchmi-right="0">
+</div>
+<div data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0" id="TitleInput_33" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="32.1" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInputVertical.usercontrol" data-tchmi-title="Insert_Val" data-tchmi-top="70.2" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="px">
+</div>
+</div>
+</div>

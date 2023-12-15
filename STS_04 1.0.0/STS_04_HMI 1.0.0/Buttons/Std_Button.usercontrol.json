@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "data-tchmi-std_button_name",
+      "displayName": "std_button_name",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "defaultValue": "Insert Name",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "std_button_name",
+      "propertySetterName": "setStd_button_name",
+      "propertyGetterName": "getStd_button_name",
+      "refTo": ""
+    },
+    {
+      "name": "data-tchmi-std_button_value",
+      "displayName": "std_button_value",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:general#/definitions/BOOL",
+      "category": "",
+      "description": "",
+      "defaultValue": false,
+      "defaultValueInternal": false,
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "std_button_value",
+      "propertySetterName": "setStd_button_value",
+      "propertyGetterName": "getStd_button_value",
+      "refTo": ""
+    },
+    {
+      "name": "data-tchmi-std_button_img",
+      "displayName": "std_button_img",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiImage",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "std_button_img",
+      "propertySetterName": "setStd_button_img",
+      "propertyGetterName": "getStd_button_img",
+      "refTo": ""
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.758.8/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

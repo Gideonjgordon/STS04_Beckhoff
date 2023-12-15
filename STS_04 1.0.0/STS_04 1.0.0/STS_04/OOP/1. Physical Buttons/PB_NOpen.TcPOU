@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PB_NOpen" Id="{44309809-c3cd-43c2-937b-a5a2e61b4600}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PB_NOpen IMPLEMENTS I_PB
+VAR
+	bInput AT %I* :BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="IsPressed" Id="{436d6bab-f1cc-467b-a463-c09895f1697e}">
+      <Declaration><![CDATA[PROPERTY IsPressed : BOOL
+//Property of PB when pressed]]></Declaration>
+      <Get Name="Get" Id="{04f67856-0578-4e63-b66b-94192e1d7d22}">
+        <Declaration><![CDATA[VAR
+	//Giving the properties of bInputSensor to isPressed
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsPressed := bInput;
+
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="IsReleased" Id="{6f3903d3-47b5-4b37-a1b4-9acd7eb2f282}">
+      <Declaration><![CDATA[PROPERTY IsReleased : BOOL
+//Property of PB when PBNOpen is released]]></Declaration>
+      <Get Name="Get" Id="{7c03c24d-fde5-402c-a6ba-0b77a6d5f407}">
+        <Declaration><![CDATA[VAR
+	//Giving the properties of bInputSensor to isPressed
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsReleased := NOT bInput;
+
+
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="PB_NOpen">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="PB_NOpen.IsPressed.Get">
+      <LineId Id="2" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="PB_NOpen.IsReleased.Get">
+      <LineId Id="2" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

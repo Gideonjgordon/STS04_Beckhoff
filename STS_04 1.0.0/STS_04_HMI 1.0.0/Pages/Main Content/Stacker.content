@@ -1,0 +1,194 @@
+<div id="Stacker_Content" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="800" data-tchmi-creator-viewport-height="300">
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "right": 0,
+  "top": 0,
+  "bottom": 0,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+<div id="TcHmiRegion_2" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-creator-locked="True">
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+</div>
+<div id="TcHmiTextblock_19" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-text="  Stacker" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150">
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(8, 68, 102, 1)"
+}
+</script>
+</div>
+<div id="TitleInput_9" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="1.3" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Open Oscillator (ms)" data-tchmi-top="15" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.tOpenOscillator_s%/s%">
+</div>
+<div id="TitleInput_10" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="1.3" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Close Jogger (s)" data-tchmi-top="30.0" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.tCloseJOgger_s%/s%">
+</div>
+<div id="TitleInput_11" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="1.3" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Down Blast (ms)" data-tchmi-top="45.0" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.tDownBlas_ms%/s%">
+</div>
+<div id="TitleInput_12" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="1.3" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Down Blast on (mm)" data-tchmi-top="60.0" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value">
+</div>
+<div id="TcHmiTextblock_20" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="16" data-tchmi-height-unit="%" data-tchmi-left="28.7" data-tchmi-left-unit="%" data-tchmi-text="Stacker Plate Movement" data-tchmi-top="15.0" data-tchmi-top-unit="%" data-tchmi-width="14.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="125" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-weight="Bold">
+</div>
+<div id="TitleInput_16" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="1.3" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInput.usercontrol" data-tchmi-title="Descent Pulse (ms)" data-tchmi-top="74.7" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.tDescentPulse_ms%/s%">
+</div>
+<div id="TitleInput_17" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="15" data-tchmi-height-unit="%" data-tchmi-left="63.8" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/TitleInputVertical.usercontrol" data-tchmi-title="Alignment Ratio" data-tchmi-top="82.7" data-tchmi-top-unit="%" data-tchmi-width="29.9" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.nAlignmentRation_n%/s%">
+</div>
+<div id="Pill_Control_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="20" data-tchmi-height-unit="%" data-tchmi-left="63.8" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/Pill_Control_Input.usercontrol" data-tchmi-title="Brake Length" data-tchmi-top="38.3" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.nBrakeSpeedLength%/s%" data-tchmi-increment="%s%PLC1.GVL.stHMI.StackerOP.bDecreaseBrakeLength%/s%" data-tchmi-minus="%s%PLC1.GVL.stHMI.StackerOP.bIncreaseBrakeLength%/s%">
+</div>
+<div id="Pill_Control_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="20" data-tchmi-height-unit="%" data-tchmi-left="63.8" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/Pill_Control_Input.usercontrol" data-tchmi-title="Brake Speed Ratio" data-tchmi-top="15" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.nBrakeSpeedRatio%/s%" data-tchmi-increment="%s%PLC1.GVL.stHMI.StackerOP.bIncreaseBrakeSpeedRatio%/s%" data-tchmi-minus="%s%PLC1.GVL.stHMI.StackerOP.bDecreaseBrakeSpeedRatio%/s%">
+</div>
+<div id="Pill_Control_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="20" data-tchmi-height-unit="%" data-tchmi-left="63.8" data-tchmi-left-unit="%" data-tchmi-target-user-control="Buttons/Pill_Control_Input.usercontrol" data-tchmi-title="Intersheet" data-tchmi-top="61.7" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-value="%s%PLC1.GVL.stHMI.StackerOP.nIntersheet%/s%" data-tchmi-increment="%s%PLC1.GVL.stHMI.StackerOP.bIncreaseIntersheet%/s%" data-tchmi-minus="%s%PLC1.GVL.stHMI.StackerOP.bDecreaseIntersheet%/s%">
+</div>
+<div id="TcHmiButton_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="25" data-tchmi-height-unit="%" data-tchmi-left="30.6" data-tchmi-left-unit="%" data-tchmi-top="33.3" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-background-image="Logo/up_arrow.png" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width="100" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="100" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%s%PLC1.GVL.stHMI.StackerOP.bStackerPlateUp%/s%">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(0, 135, 200, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 3.0,
+  "topRight": 3.0,
+  "bottomLeft": 3.0,
+  "bottomRight": 3.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(1, 0, 0, 1)"
+}
+</script>
+</div>
+<div id="TcHmiButton_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="25" data-tchmi-height-unit="%" data-tchmi-left="30.6" data-tchmi-left-unit="%" data-tchmi-top="63.3" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-background-image="Logo/down_arrow.png" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-width="100" data-tchmi-text-vertical-alignment="Top" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="100" data-tchmi-text-horizontal-alignment="Center" data-tchmi-state-symbol="%s%PLC1.GVL.stHMI.StackerOP.bStackerPlateDown%/s%">
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(0, 135, 200, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 3.0,
+  "topRight": 3.0,
+  "bottomLeft": 3.0,
+  "bottomRight": 3.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(1, 0, 0, 1)"
+}
+</script>
+</div>
+</div>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Fb_RealToAnalog_Conversion" Id="{155a943d-b153-4106-9f22-5ea1cec92c87}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Fb_RealToAnalog_Conversion
+VAR_INPUT
+	lActualVal	: REAL;
+	lMinVal		: REAL;
+	lMaxVal		: REAL;
+	
+END_VAR
+VAR_OUTPUT
+	iRawVal	: UINT;					//Raw converted sensor values
+END_VAR           
+VAR               
+	lRangeHigh	: REAL := 32676;
+	lRawVal : REAL;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF lActualVal <=0 THEN
+	iRawVal:=0;
+END_IF
+
+IF lActualVal>0 THEN
+	lRawVal:=(lActualVal-lMinVal)*((lRangeHigh-0)/(lMaxVal-lMinVal));
+END_IF
+
+
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="Fb_RealToAnalog_Conversion">
+      <LineId Id="27" Count="5" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="35" Count="2" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

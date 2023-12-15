@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Feeder" Id="{7c4ba1ca-5c7a-4b43-bce2-192dcc10d3e9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Feeder IMPLEMENTS MachineModule
+VAR
+	(*General Movement Trigger*)
+	bEnable			: BOOL;
+	bDisable        : BOOL;
+	bError          : BOOL;
+	bOverride       : BOOL;
+	bSimulation     : BOOL;
+	bStart          : BOOL;
+	bStop           : BOOL;
+	
+	(*Sensor Specific Trigger*)
+	bBottomHit 		: I_Sensor;
+	bTopHit			: I_Sensor;
+	(*Internal Variable*)
+	nMovement 		: INT;
+	nmovetest		: INT;
+	(*Fedder*)
+	bFeederPlateInPos	: BOOL;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*Business Logic here*)
+
+IF 	bEnable 
+	AND NOT (bError)
+	AND nMovement<1500 THEN
+	
+	nMovement := nMovement+1;
+	bStop:=FALSE; (*Could use this thing in another module*)
+	
+END_IF
+
+IF nMovement=1500 THEN
+	bStop:=TRUE;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{67148c7b-6ee3-4791-a511-6a80a34ec26c}">
+      <Declaration><![CDATA[METHOD Disable : BOOL 
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{903e6d0b-3746-4369-aebc-bbcba2c3a8d5}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=TRUE;
+bDisable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Error" Id="{be472e56-0c8b-4050-bec9-f54152999515}">
+      <Declaration><![CDATA[METHOD Error : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable:=FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{02bddd52-7631-4084-83f2-ccba1d5ef21d}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	bBottomHit 		: I_Sensor;
+	bTopHit			: I_Sensor;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.bBottomHit	:= bBottomHit;
+THIS^.bTopHit		:= bTopHit;		]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Override" Id="{f6a40ca7-f285-41af-ae0b-7138c692a8d3}">
+      <Declaration><![CDATA[METHOD Override : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{46056118-b452-4d98-8e71-bae590cde4a6}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{1f67bb41-f3df-4402-b491-9f139d9e706a}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StateMachine" Id="{41ceeb2c-3832-4fa5-b551-06150a392abb}">
+      <Declaration><![CDATA[METHOD PUBLIC StateMachine
+VAR_INPUT
+
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF bEnable THEN
+	nmovetest:=nmovetest+1;	
+	ELSE
+		
+	nmovetest:=0;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{f67300df-0080-45fe-b0fb-7c05483d98a3}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="Feeder">
+      <LineId Id="22" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="105" Count="1" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="114" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="109" Count="1" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="96" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.Disable">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.Enable">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="Feeder.Error">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.FB_init">
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.Override">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.Reset">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.StateMachine">
+      <LineId Id="5" Count="0" />
+      <LineId Id="12" Count="3" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+    <LineIds Name="Feeder.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

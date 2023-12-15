@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="VacuumBeltTableState" Id="{07e93346-5fab-4675-94bd-7f54afc42771}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE VacuumBeltTableState :
+(
+	State_Init 					,
+	State_AutoStart         	,
+	State_AutoStop          	,
+	State_AutoVacOn				,
+	State_VacOff				,
+	State_AutoBackToInit        ,
+	State_Override				,
+	State_Error					
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

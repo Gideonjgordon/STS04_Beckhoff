@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_Feeder" Id="{1b62ab0e-a2dc-4978-80be-8223d6880511}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Feeder
+VAR
+	bStartFeeder : BOOL;
+	bFeederOK: BOOL;
+	//dut_FeedingState : FeedingState;
+	fbFb_FeedingStateCheck: Fb_FeedingStateCheck;	
+//-----------------------------------Feeder Mode -------------------------//
+	iFeederMode : INT;	
+	bGoCounter, bSetCounter AT %Q*:BOOL;
+	wFrequencyValue, wTargetCounterValue, wSetCounterValue AT %Q*:WORD;
+	wCounterValue AT %I*:WORD;
+	nState, nCntCycle:UDINT;
+	bStart:BOOL;
+	wFrequencyValue_Test:WORD:=200;
+	nPrevValue			:WORD;
+	wTargetCounterValue_Test:WORD:=180;
+	bHitTop : BOOL;
+	bHitBottom : BOOL;
+	bTargetDistanceHitUP	: BOOL;
+	bTargetDistanceHitDown	: BOOL;
+
+//------------------------------------CASE-------------------------------//
+	ifeedercase : INT;
+
+(* For reference
+	State_Init 					:= 1,
+	State_AutoStart         	:= 2,
+	State_AutoHysterisis    	:= 3,
+	State_AutoStop          	:= 4,
+	State_AutoTopSensorReached 	:= 5,
+	State_AutoFinalPosition     := 6,
+	State_AutoBackToInit        := 7,
+	State_Feeding				:= 8,
+	State_Override				:= 9,
+	State_Error					:= 10,
+	State_ManualMoveUp			:= 11,
+	State_ManualMoveDown    	:= 12
+*)	
+//-------------------------Simulated Values-----------------------------//
+nCurrentValue 	: DWORD;
+nTargetValue	: DWORD;
+	
+END_VAR
+VAR_INPUT
+	bStartCommand : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF GVL.bHmiSimulation THEN
+	GVL.stHMIsimul:=GVL.stHMI;
+	iFeederMode:=FeederMode.Mode_Simulation;
+END_IF 
+IF NOT GVL.bHmiSimulation THEN
+	GVL.stHMI:=GVL.stHMI;
+	iFeederMode:=FeederMode.Mode_Standard;
+END_IF
+
+CASE ifeedercase OF
+
+FeedingState.State_Init 			:	//Awaiting for command   
+	IF GVL.stHMI.bAuto  THEN
+		ifeedercase:=FeedingState.State_AutoStart;
+	END_IF
+	IF GVL.stHMI.bFeederManualDown THEN
+		ifeedercase:=FeedingState.State_ManualMoveDown;	
+	END_IF
+	IF GVL.stHMI.bFeederManualUp THEN
+		ifeedercase:=FeedingState.State_ManualMoveUp;
+	END_IF	
+	IF NOT (iFeederMode=FeederMode.Mode_Simulation) THEN // go back to init
+		iFeederCase:=FeedingState.State_Init;
+		wTargetCounterValue:=0;
+		nPrevValue:=0;	
+		bHitTop:=FALSE;	
+		bHitBottom:=FALSE;
+		bTargetDistanceHitUp:=FALSE;
+		bTargetDistanceHitDown:=FALSE;
+		nState:=0;
+	END_IF
+	
+FeedingState.State_AutoStart            : 	//Start 
+
+	IF NOT bStartFeeder THEN
+		ifeedercase:= FeedingState.State_AutoBackToInit;
+	END_IF
+	IF GVL.bHmiSimulation THEN
+		//Adding Feeder movement simulation
+		;
+	END_IF
+FeedingState.State_AutoHysterisis       : 
+FeedingState.State_AutoStop             : 
+FeedingState.State_AutoTopSensorReached :	
+FeedingState.State_AutoFinalPosition    : 
+FeedingState.State_AutoBackToInit       : 
+FeedingState.State_Feeding				:        
+FeedingState.State_Override				:       
+FeedingState.State_Error				:	
+     
+FeedingState.State_ManualMoveUp			:
+	IF iFeederMode=FeederMode.Mode_Simulation THEN
+		CASE nState OF
+				0: //Check ongoing or Initial Start
+					IF gvl.stHMI.bFeederManualUp THEN
+						IF NOT (bHitTop OR bTargetDistanceHitUp) THEN
+							IF nPrevValue=0 
+							AND wTargetCounterValue=0 THEN // Coming from initialization
+								nState:=20;
+							END_IF
+							IF wTargetCounterValue>nPrevValue THEN //Continuation
+								nPrevValue:=wTargetCounterValue;
+								nState:=20;
+							END_IF
+						ELSE
+							nState:=0;
+							nPrevValue:=wTargetCounterValue;
+						END_IF
+					END_IF	
+					
+				20://Increment and making sure previous values are recorded.			
+							IF (wTargetCounterValue>nPrevValue) THEN
+								nState:=30;
+							END_IF
+							IF (wTargetCounterValue=nPrevValue) THEN
+								wTargetCounterValue:=wTargetCounterValue+1;
+								nState:=20;
+							END_IF
+
+				30:	//Check if reached target or not
+					IF wTargetCounterValue < wTargetCounterValue_Test THEN //not reached
+						nstate:=0;
+					END_IF
+					IF wTargetCounterValue >= wTargetCounterValue_Test OR bHitTop THEN // Reached sensor top or movement set
+						nState:=40;
+					END_IF
+				40:	
+					nState:=0;
+					bTargetDistanceHitUp:=TRUE;
+					bFeederOK :=TRUE;
+					
+				
+		END_CASE
+	END_IF
+	IF iFeederMode=FeederMode.Mode_Jog THEN
+		;
+	END_IF
+	ifeedercase:= FeedingState.State_Init;
+	
+FeedingState.State_ManualMoveDown		:
+	IF iFeederMode=FeederMode.Mode_Simulation THEN
+		CASE nState OF
+				0: //Check ongoing or Initial Start
+					IF gvl.stHMI.bFeederManualDown THEN
+						IF NOT (bHitBottom OR bTargetDistanceHitDown) THEN
+							IF nPrevValue=0 
+							AND wTargetCounterValue=0 THEN // Coming from initialization
+								nState:=20;
+							END_IF
+							IF wTargetCounterValue>nPrevValue THEN //Continuation
+								nPrevValue:=wTargetCounterValue;
+								nState:=20;
+							END_IF
+						ELSE
+							nState:=0;
+							nPrevValue:=wTargetCounterValue;
+						END_IF
+					END_IF	
+					
+				20://Increment and making sure previous values are recorded.			
+							IF (wTargetCounterValue>nPrevValue) THEN
+								nState:=30;
+							END_IF
+							IF (wTargetCounterValue=nPrevValue) THEN
+								wTargetCounterValue:=wTargetCounterValue+1;
+								nState:=20;
+							END_IF
+
+				30:	//Check if reached target or not
+					IF wTargetCounterValue < wTargetCounterValue_Test THEN //not reached
+						nstate:=0;
+					END_IF
+					IF wTargetCounterValue >= wTargetCounterValue_Test OR bHitTop THEN // Reached sensor top or movement set
+						nState:=40;
+					END_IF
+				40:	
+					nState:=0;
+					bTargetDistanceHitDown:=TRUE;
+				
+		END_CASE
+	END_IF
+	IF iFeederMode=FeederMode.Mode_Jog THEN
+		;
+	END_IF
+	ifeedercase:= FeedingState.State_Init;
+	
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="P_Feeder">
+      <LineId Id="205" Count="0" />
+      <LineId Id="237" Count="0" />
+      <LineId Id="250" Count="0" />
+      <LineId Id="238" Count="0" />
+      <LineId Id="240" Count="1" />
+      <LineId Id="252" Count="0" />
+      <LineId Id="242" Count="1" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="149" Count="0" />
+      <LineId Id="244" Count="0" />
+      <LineId Id="147" Count="0" />
+      <LineId Id="245" Count="0" />
+      <LineId Id="247" Count="0" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="543" Count="5" />
+      <LineId Id="551" Count="0" />
+      <LineId Id="550" Count="0" />
+      <LineId Id="552" Count="0" />
+      <LineId Id="542" Count="0" />
+      <LineId Id="538" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="150" Count="2" />
+      <LineId Id="161" Count="1" />
+      <LineId Id="166" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="78" Count="7" />
+      <LineId Id="348" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="248" Count="0" />
+      <LineId Id="266" Count="1" />
+      <LineId Id="270" Count="0" />
+      <LineId Id="356" Count="0" />
+      <LineId Id="340" Count="0" />
+      <LineId Id="437" Count="0" />
+      <LineId Id="343" Count="0" />
+      <LineId Id="272" Count="0" />
+      <LineId Id="342" Count="0" />
+      <LineId Id="380" Count="0" />
+      <LineId Id="346" Count="0" />
+      <LineId Id="273" Count="0" />
+      <LineId Id="358" Count="1" />
+      <LineId Id="443" Count="0" />
+      <LineId Id="357" Count="0" />
+      <LineId Id="349" Count="0" />
+      <LineId Id="337" Count="0" />
+      <LineId Id="332" Count="0" />
+      <LineId Id="430" Count="0" />
+      <LineId Id="384" Count="0" />
+      <LineId Id="386" Count="0" />
+      <LineId Id="431" Count="0" />
+      <LineId Id="434" Count="1" />
+      <LineId Id="433" Count="0" />
+      <LineId Id="368" Count="0" />
+      <LineId Id="333" Count="0" />
+      <LineId Id="350" Count="5" />
+      <LineId Id="296" Count="0" />
+      <LineId Id="370" Count="0" />
+      <LineId Id="440" Count="0" />
+      <LineId Id="594" Count="1" />
+      <LineId Id="369" Count="0" />
+      <LineId Id="305" Count="0" />
+      <LineId Id="254" Count="0" />
+      <LineId Id="256" Count="2" />
+      <LineId Id="444" Count="0" />
+      <LineId Id="347" Count="0" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="485" Count="40" />
+      <LineId Id="534" Count="3" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="75" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_PB" Id="{4ffd7757-030f-4f8c-bc71-3b17af446e1f}">
+    <Declaration><![CDATA[	INTERFACE I_PB
+]]></Declaration>
+    <Property Name="IsPressed" Id="{938af001-661c-4a59-805f-d2ab2b676531}">
+      <Declaration><![CDATA[PROPERTY IsPressed : BOOL
+//Property of PB when pressed]]></Declaration>
+      <Get Name="Get" Id="{62943097-ee12-4033-a2c6-fe2ed75e8f6d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="IsReleased" Id="{94c5c50a-292c-4717-b3f9-bc12549069e6}">
+      <Declaration><![CDATA[PROPERTY IsReleased : BOOL
+//Property of PB when is released]]></Declaration>
+      <Get Name="Get" Id="{806ae2f5-5997-4a5b-89d4-5e2009c6a39c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

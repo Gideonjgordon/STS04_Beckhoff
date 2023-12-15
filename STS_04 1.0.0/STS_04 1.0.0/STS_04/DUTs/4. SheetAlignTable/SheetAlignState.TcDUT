@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="SheetAlignState" Id="{c47fd5eb-df91-4ef5-bfbc-4c1a894d50a7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE SheetAlignState :
+(
+	State_Init 					,
+	State_AutoStart         	,
+	State_AutoStop          	,
+	State_AutoBlowerOn			,
+	State_AutoBackToInit        ,
+	State_Override				,
+	State_Error					
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

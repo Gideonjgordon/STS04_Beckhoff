@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.50">
+	<Project ProjectGUID="{143D57CC-FA2A-4056-A94F-6EAF581FF863}" Target64Bit="true" ShowHideConfigurations="#x106">
+		<System>
+			<Settings DontCheckTarget="172.30.32.1.1.1"/>
+			<Licenses>
+				<Target>
+					<ManualSelect>{CB3D4492-5E9E-43BC-AB3B-27CF3896EEC2}</ManualSelect>
+					<ManualSelect>{2752D285-16AD-4E89-AE6C-80E72784D264}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{58DFE63B-A36D-451F-B137-FE1D1242D292}" Name="STS_04" PrjFilePath="STS_04\STS_04.plcproj" TmcFilePath="STS_04\STS_04.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="STS_04\STS_04.tmc" TmcHash="{B5CF64BA-C9BA-0F20-554C-023788F360A1}">
+					<Name>STS_04 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>P_Feeder.wCounterValue</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN_OOP.bStartButton.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN_OOP.bStopButton.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN_OOP.bEstopButton.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bStart.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bStop.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bEmergencyStop.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bBottomHit.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bTopHit.bInput</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>P_Feeder.bGoCounter</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>P_Feeder.bSetCounter</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>P_Feeder.wFrequencyValue</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>P_Feeder.wTargetCounterValue</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>P_Feeder.wSetCounterValue</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bEnableFeeder.bOutput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bUpFeeder.bOutput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bResetFeeder.bOutput</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_OOP.bDownFeeder.bOutput</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

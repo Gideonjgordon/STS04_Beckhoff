@@ -1,0 +1,272 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58dfe63b-a36d-451f-b137-fe1d1242d292}</ProjectGuid>
+    <SubObjectsSortedByName>True</SubObjectsSortedByName>
+    <DownloadApplicationInfo>true</DownloadApplicationInfo>
+    <WriteProductVersion>true</WriteProductVersion>
+    <GenerateTpy>false</GenerateTpy>
+    <Name>STS_04</Name>
+    <ProgramVersion>3.1.4023.0</ProgramVersion>
+    <Application>{1907d5b4-cb9d-43fa-913a-4d4d1b2a1191}</Application>
+    <TypeSystem>{150e34e8-0d2d-476f-baed-4e404d9f51e4}</TypeSystem>
+    <Implicit_Task_Info>{ce07af62-5419-4424-a696-cda0f49b97c9}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{6cb3e685-3359-4278-bb44-153bcd805c52}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{3331170e-4840-4582-9894-6870c2408f20}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{58f3a15a-e2df-4f8a-9a4e-3bf01fdbf1cc}</LibraryReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DUTs\2. HMI\2.1 HMI Visualization\dutVisuFeeder.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\2. HMI\2.1 HMI Visualization\dutVisuMain.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\2. HMI\2.1 HMI Visualization\dutVisuVBT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\2. HMI\2.1 HMI Visualization\dutVisuEjection.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\2. HMI\2.1 HMI Visualization\dutVisuStacker.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\3. Feeder\FeederMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\3. Feeder\FeederSimulation.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\3. Feeder\FeedingState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\1. General State\GeneralActiveProcessState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\1. General State\GeneralStateCommand.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\1. General State\GeneralStateMain.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\2. HMI\HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\4. SheetAlignTable\SheetAlignMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\4. SheetAlignTable\SheetAlignState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\5. VacuumBeltTable\VacuumBeltTableMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\5. VacuumBeltTable\VacuumBeltTableState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\6. EjectionGate\EjectionGateMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\6. EjectionGate\EjectionGateState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\7. StackerBeltTable\StackerBeltTableMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\7. StackerBeltTable\StackerBeltTableState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\GVL.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_OOP.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="OOP\0. Program\MAIN_OOP.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\1. Physical Buttons\Interface\I_PB.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\1. Physical Buttons\PB_NOpen.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\1. Physical Buttons\PB_NClose.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\2. Physical Sensors\Interface\I_Sensor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\2. Physical Sensors\Interface\O_Sensor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\2. Physical Sensors\Sensor_NOpen.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\2. Physical Sensors\Sensor_NClose.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\2. Physical Sensors\Sensor_Trigger.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\0. Main Machine\EjectionGate.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\0. Main Machine\Feeder.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\0. Main Machine\Interface\MachineModule.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\0. Main Machine\SAT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\0. Main Machine\SBT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\0. Main Machine\VBT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\P_MachineMain.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OOP\5. Machine\STS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\0. FB\Fb_AnalogToReal_Conversion.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\0. FB\Fb_RealToAnalog_Conversion.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.2 Feeder Operation\Fb_FeederOperation.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.2 Feeder Operation\Fb_FeedingStateCheck.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.2 Feeder Operation\P_Feeder.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.3 Sheet Align Table %28SAT%29\P_SheetAlignTable.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.4 Vacumm Belt Table %28VBT%29\P_VacummBeltTable.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.5 Ejection Gate\P_EjectionGate.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.6 Stacker Belt Table %28SBT%29\P_StackerBeltTable.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.7 General Movement\P_AllStateChecker.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1.7 General Movement\P_GeneralStateManager.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\P_Test.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs_Test\FB_Raw2Analog_Test.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs_Test\PRG_TEST.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DUTs" />
+    <Folder Include="DUTs\1. General State" />
+    <Folder Include="DUTs\2. HMI" />
+    <Folder Include="DUTs\2. HMI\2.1 HMI Visualization" />
+    <Folder Include="DUTs\3. Feeder" />
+    <Folder Include="DUTs\4. SheetAlignTable" />
+    <Folder Include="DUTs\5. VacuumBeltTable" />
+    <Folder Include="DUTs\6. EjectionGate" />
+    <Folder Include="DUTs\7. StackerBeltTable" />
+    <Folder Include="GVLs" />
+    <Folder Include="OOP" />
+    <Folder Include="OOP\1. Physical Buttons" />
+    <Folder Include="OOP\1. Physical Buttons\Interface" />
+    <Folder Include="OOP\2. Physical Sensors" />
+    <Folder Include="OOP\2. Physical Sensors\Interface" />
+    <Folder Include="OOP\3. Motors" />
+    <Folder Include="OOP\5. Machine\0. Main Machine\Interface" />
+    <Folder Include="OOP\5. Machine\1. Feeder" />
+    <Folder Include="OOP\5. Machine\2. SAT" />
+    <Folder Include="OOP\5. Machine\3. VBT" />
+    <Folder Include="OOP\5. Machine\4. Eject Gate" />
+    <Folder Include="OOP\5. Machine\5. SBT" />
+    <Folder Include="OOP\0. Program" />
+    <Folder Include="OOP\5. Machine" />
+    <Folder Include="OOP\4. Actuators" />
+    <Folder Include="OOP\5. Machine\0. Main Machine" />
+    <Folder Include="POUs\1.9 Error Check" />
+    <Folder Include="POUs\1.10 Reset Flag" />
+    <Folder Include="POUs\0.1 HMI" />
+    <Folder Include="POUs_Test" />
+    <Folder Include="POUs\0. FB" />
+    <Folder Include="POUs\1.0 Yaskawa Drive Operation" />
+    <Folder Include="POUs\1.3 Sheet Align Table %28SAT%29" />
+    <Folder Include="POUs\1.1 Debug Mode" />
+    <Folder Include="POUs\1.2 Feeder Operation" />
+    <Folder Include="POUs\1.4 Vacumm Belt Table %28VBT%29" />
+    <Folder Include="POUs\1.5 Ejection Gate" />
+    <Folder Include="POUs\1.7 General Movement" />
+    <Folder Include="POUs\1.6 Stacker Belt Table %28SBT%29" />
+    <Folder Include="POUs\1.8 Error bit" />
+    <Folder Include="VISUs" />
+    <Folder Include="POUs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Module">
+      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Module</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcUnit">
+      <DefaultResolution>TcUnit, * (www.tcunit.org)</DefaultResolution>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="STS_04.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <PlcProjectOptions>
+      <XmlArchive>
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
+      <v n="Name">"&lt;ProjectRoot&gt;"</v>
+      <d n="SubKeys" t="Hashtable" />
+      <d n="Values" t="Hashtable" />
+    </o>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
+    </PlcProjectOptions>
+  </ProjectExtensions>
+</Project>

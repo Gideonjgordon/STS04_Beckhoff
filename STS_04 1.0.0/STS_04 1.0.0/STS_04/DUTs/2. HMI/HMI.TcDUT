@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="HMI" Id="{b5242e3a-392c-4b88-93f7-aad313e41c3d}">
+    <Declaration><![CDATA[TYPE HMI :
+STRUCT
+	//-----------------------------Auto----------------------------
+	bAuto				:BOOL;
+	bStart              :BOOL;
+	bStop               :BOOL;
+                        
+	bFeederManualUp     :BOOL;
+	bFeederManualDown   :BOOL;
+	(*Visualization*)
+	
+	FeederOp			: dutVisuFeeder;
+	VBTOp               : dutVisuVBT;
+	EjectionOP          : dutVisuEjection;
+	StackerOP           : dutVisuStacker;
+	Main				: dutVisuMain;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
